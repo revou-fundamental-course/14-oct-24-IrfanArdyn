@@ -1,0 +1,101 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --usual:   'Centaur', 'Times New Roman', 'Helvetica', 'Sans-Serif' 'Arial';
+    --sideshow: 'Helvetica', 'Times New Roman', 'Arial',
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#container{
+    width: auto;
+    padding: 20px;
+    margin: 35px;
+    border: solid black;
+}
+
+header {
+    width: auto;
+    height: 75px;
+    background-color: #fedf3d;
+    margin: 35px;
+    padding: 15px;
+    border: solid 1px black;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+header>h1 {
+    padding-left: 15px;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: "Centaur";
+}
+
+
+
+#headbar{
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 9999px;
+    background-size: cover;
+    background-position: center;
+}
+
+#headbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+#headbar li {
+    margin-right: 20px;
+    width: 105px;
+    background-color: rgba(140, 255, 0, 0.708);
+    border: dashed 3px #363fc3;
+    border-radius: 8px;
+    padding: 5px;
+    align-content: center;
+    box-shadow: 0 10px 15px -3px rgb(0, 0, 0, 0.1), 0 4px 6px -4px rgb(0, 0, 0, 0.1);
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+#headbar a {
+    color: #000;
+    font-size: large;
+    text-decoration: none;
+    padding: 12px;
+    
+}
+
+/* Apply styles for screens with a max-width of 768px */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column; /* Change layout to column on smaller screens */
+    }
+    #headbar {
+        width: 100%; /* Make #headbar full-width on smaller screens */
+    }
+    #headbar li {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+}
