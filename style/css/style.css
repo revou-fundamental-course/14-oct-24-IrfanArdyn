@@ -219,7 +219,7 @@ footer {
 }
 
 /* Apply styles for screens with a max-width of 768px */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .main-header {
         display: flex;
         flex-direction: column; /* Change layout to column on smaller screens */
@@ -272,6 +272,30 @@ footer {
     #office-locations{
         display: flex;
         flex-direction: column;
+    }
+
+    #message-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #message-container form textarea{
+        width: 100%;
+    }
+
+    #message-container div{
+        margin-top: 18px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+    .main-header {
+        height: auto;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        transform: translateY(325px);
     }
 
     #message-container {
