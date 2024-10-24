@@ -198,7 +198,7 @@ nav#headbar li:hover a, nav#headbar li:focus a, nav#headbar li:active a {
 
 #message-container form textarea {
     width: 150%;
-    height: 50%;
+    height: 30%;
 }
 
 #message-container div {
