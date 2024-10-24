@@ -32,7 +32,7 @@ body {
     display: flex;
 }
 
-header>h1 {
+header h1 {
     padding-left: 15px;
     display: flex;
     align-items: center;
@@ -60,7 +60,6 @@ header>h1 {
     background-position: center;
 }
 
-
 #headbar ul {
     list-style: none;
     margin: 0;
@@ -82,13 +81,22 @@ header>h1 {
     box-shadow: 0 10px 15px -3px rgb(0, 0, 0, 0.1), 0 4px 6px -4px rgb(0, 0, 0, 0.1);
     flex: 1 1 auto;
     text-align: center;
+    cursor: pointer;
 }
 
 #headbar a {
     color: #000;
     font-size: medium;
-    text-decoration: none;
-    padding: 12px;   
+    text-decoration: none;   
+}
+
+nav#headbar li:hover, nav#headbar li:focus, nav#headbar li:active {
+    background-color: #993300;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+nav#headbar li:hover a, nav#headbar li:focus a, nav#headbar li:active a {
+    color: #fff;
 }
 
 .section-header {
@@ -96,14 +104,62 @@ header>h1 {
 }
 
 #section-home {
-    border: solid 1px black;
     margin: 5px;
     padding: 12px;
-    max-height: 578px;
+    max-height: 800px;
+    overflow: hidden;
+    
+}
+
+#section-home p {
+    margin-bottom: 35px;
+}
+
+.swiper-container {
+    height: 450px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Untuk aspect ratio */
+}
+
+/*Button pengoperasian Swiper*/
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+    transform: translateY(175px);
+}
+
+.swiper-button-prev{
+    left: 10px;
+}
+
+.swiper-button-next{
+    right: 10px;
+}
+
+#section-home img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border: #000 solid 1px;
+    border-radius: 25px;
+    
 }
 
 #section-offices {
-    border: solid 1px black;
     margin: 5px;
     padding: 12px;
 }
@@ -126,15 +182,30 @@ header>h1 {
 }
 
 #section-portfolio {
-    border: solid 1px black;
     margin: 5px;
     padding: 12px;
 }
 
 #section-message {
-    border: solid 1px black;
     margin: 5px;
     padding: 12px;
+}
+
+#message-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#message-container form textarea {
+    width: 150%;
+    height: 50%;
+}
+
+#message-container div {
+    border: #000 solid 1px; 
+    border-radius: 25px; 
+    width: 60%; 
+    padding-left: 12px;
 }
 
 footer {
@@ -149,17 +220,71 @@ footer {
 
 /* Apply styles for screens with a max-width of 768px */
 @media (max-width: 768px) {
-    #header {
+    .main-header {
+        display: flex;
         flex-direction: column; /* Change layout to column on smaller screens */
+        height: auto;
     }
+
+    .main-header h1 {
+        font-size: 0; /* Hide the text */
+        margin: 0; /* Adjust the margin to maintain the layout */
+    }
+
+    .main-header h1 #logo {
+        font-size: initial; /* Reset the font-size for the logo */
+        margin: 0 auto; /* Center the logo horizontally */
+    }
+
     #headbar {
         width: 100%; /* Make #headbar full-width on smaller screens */
     }
+
     #headbar li {
+        display: flex;
+        flex-direction: column;
         flex: 1 1 100%;
-        margin: 5px 0;
+        margin: 5px;
+        justify-content: center;
     }
+
     #section-home {
+        display: flex;
+        flex-direction: column;
         height: auto;
+    }
+
+    .section-header{
+        display: flex;
+    }
+
+    .section-header h1{
+        display: flex;
+        font-size: large;
+        padding-left: 0px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+    transform: translateY(378px);
+    }
+
+    #office-locations{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #message-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #message-container form textarea{
+        width: 100%;
+    }
+
+    #message-container div{
+        margin-top: 18px;
+        width: 100%;
     }
 }
